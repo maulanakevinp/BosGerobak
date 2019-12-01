@@ -31,64 +31,13 @@
 
 <body>
     <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-10 col-lg-10">
-                            <div class="main-menu d-none d-lg-block">
-                                <nav>
-                                    <ul class="mein_menu_list" id="navigation">
-                                        <li><a href="{{url('/')}}/template/about.html">About</a></li>
-                                        <li><a href="{{url('/')}}/template/service.html">Services</a></li>
-                                        <li><a href="{{url('/')}}/template/menu.html">menu</a></li>
-                                        <li><a href="{{url('/')}}/template/gallery.html">gallery</a></li>
-                                        <div class="logo-img d-none d-lg-block">
-                                                <a href="{{url('/')}}/template/index.html">
-                                                    <img src="{{url('/')}}/template/img/logo.png" alt="">
-                                                </a>
-                                            </div>
-                                        <li><a href="{{url('/')}}/template/#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="{{url('/')}}/template/blog.html">blog</a></li>
-                                                <li><a href="{{url('/')}}/template/single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{url('/')}}/template/#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="{{url('/')}}/template/elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{url('/')}}/template/contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 d-none d-lg-block">
-                            <div class="custom_order">
-                                <a href="{{url('/')}}/template/#" class="boxed_btn_white">Custom Order</a>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                        <div class="logo-img-small d-sm-block d-md-block d-lg-none">
-                                <a href="{{url('/')}}/template/index.html">
-                                    <img src="{{url('/')}}/template/img/logo.png" alt="">
-                                </a>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    @include('layouts.components.header')
     <!-- header-end -->
 
     <!-- slider_area-start -->
     <div class="slider_area zigzag_bg_2">
         <div class="slider_sctive owl-carousel">
-            <div class="single_slider slider_img_1">
+            <div class="single_slider" style="background-image: url({{url('/')}}/template/img/banner/banner.png)">
                 <div class="single_slider-iner">
                     <div class="slider_contant text-center">
                         <h3>Food Catering <br>
@@ -99,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single_slider slider_img_1">
+            <div class="single_slider" style="background-image: url({{url('/')}}/template/img/banner/banner.png)">
                 <div class="single_slider-iner">
                     <div class="slider_contant text-center">
                         <h3>Food Catering <br>
@@ -110,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single_slider slider_img_1">
+            <div class="single_slider" style="background-image: url({{url('/')}}/template/img/banner/banner.png)">
                 <div class="single_slider-iner">
                     <div class="slider_contant text-center">
                         <h3>Food Catering <br>
@@ -209,7 +158,7 @@
                                         <p>You will love our execution</p>
                                 </div>
                                 <div class="icon_video">
-                                        <a class="popup-video" href="{{url('/')}}/template/https://www.youtube.com/watch?v=HWnXId_Zg4k"><i class="ti-control-play"></i></a>
+                                        <a class="popup-video" href="https://www.youtube.com/watch?v=HWnXId_Zg4k"><i class="ti-control-play"></i></a>
                                     </div>
                             </div>
                         </div>
@@ -511,101 +460,7 @@
     <!-- brand_area-end -->
 
     <!-- footer-start -->
-    <footer class="footer_area footer-bg zigzag_bg_1">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="heading">
-                                    Top Products
-                            </h3>
-                            <ul>
-                                <li><a href="{{url('/')}}/template/#">Managed Website</a></li>
-                                <li><a href="{{url('/')}}/template/#"> Manage Reputation</a></li>
-                                <li><a href="{{url('/')}}/template/#">Power Tools</a></li>
-                                <li><a href="{{url('/')}}/template/#">Marketing Service</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="heading">
-                                    Quick Links
-                            </h3>
-                            <ul>
-                                <li><a href="{{url('/')}}/template/#">Jobs</a></li>
-                                <li><a href="{{url('/')}}/template/#">Brand Assets</a></li>
-                                <li><a href="{{url('/')}}/template/#"> Investor Relations</a></li>
-                                <li><a href="{{url('/')}}/template/#">Terms of Service</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="heading">
-                                    Features
-                            </h3>
-                            <ul>
-                                <li><a href="{{url('/')}}/template/#">Jobs</a></li>
-                                <li><a href="{{url('/')}}/template/#">Brand Assets</a></li>
-                                <li><a href="{{url('/')}}/template/#">Investor Relations</a></li>
-                                <li><a href="{{url('/')}}/template/#">Terms of Service</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="heading">
-                                    Resources
-                            </h3>
-                            <ul>
-                                <li><a href="{{url('/')}}/template/#">Guides</a></li>
-                                <li><a href="{{url('/')}}/template/#">Research</a></li>
-                                <li><a href="{{url('/')}}/template/#">Experts</a></li>
-                                <li><a href="{{url('/')}}/template/#">Agencies</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-12 col-lg-4">
-                        <div class="footer_widget">
-                            <h3 class="heading">
-                                    Newsletter
-                            </h3>
-                            <p class="offer_text" >You can trust us. we only send promo offers,</p>
-                            <form action="#">
-                                <input type="text" placeholder="Your email address">
-                                <button type="submit"> <i class="ti-arrow-right"></i> </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-7 col-md-12 col-lg-8">
-                        <div class="copyright">
-                                <p class="footer-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="{{url('/')}}/template/https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-md-12 col-lg-4">
-                        <div class="social_links">
-                            <ul>
-                                <li><a href="{{url('/')}}/template/#"> <i class="fa fa-facebook"></i> </a></li>
-                                <li><a href="{{url('/')}}/template/#"> <i class="fa fa-twitter"></i> </a></li>
-                                <li><a href="{{url('/')}}/template/#"> <i class="fa fa-dribbble"></i> </a></li>
-                                <li><a href="{{url('/')}}/template/#"> <i class="fa fa-behance"></i> </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('layouts.components.footer')
     <!-- footer-end -->
 
 
