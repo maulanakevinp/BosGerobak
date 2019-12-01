@@ -81,8 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Bos Gerobak Sedang dalam proses pembuatan
+                    Bos Gerobak
                 </div>
+                <p>Sedang Dalam Tahapan Pengembangan</p>
             </div>
         </div>
     </body>
