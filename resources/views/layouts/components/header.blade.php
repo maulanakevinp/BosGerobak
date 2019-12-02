@@ -12,7 +12,7 @@
                                         <li><a href="{{url('/')}}/template/menu.html">menu</a></li>
                                         <li><a href="{{url('/')}}/template/gallery.html">gallery</a></li>
                                         <div class="logo-img d-none d-lg-block">
-                                                <a href="{{url('/')}}/template/index.html">
+                                                <a href="{{url('/')}}">
                                                     <img src="{{url('/')}}/img/logo/logo.png" alt="">
                                                 </a>
                                             </div>

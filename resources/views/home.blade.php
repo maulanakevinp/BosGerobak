@@ -43,94 +43,47 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title mb-60">
-                        <h3>Our Services</h3>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                        <h3>Kategori</h3>
+                        <p>Kami memiliki beberapa kategori gerobak yang cocok untuk anda silahkan pilih kategori grobak anda disini</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-gift"></i>
-                        </div>
-                        <h4>Birthday Catering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="row justify-content-center">
+                @foreach ($categories as $category)
+                    <div class="col-xl-4 col-md-6">
+                        <a class="card-link" href="{{ url('/') }}">
+                            <div class="single_service">
+                                <div class="service_icon">
+                                    <img class="mw-100" src="{{ asset('/img/categories/'.$category->foto) }}" alt="">
+                                </div>
+                                <h4>{{ $category->nama_kategori }}</h4>
+                                <p class="block-with-text">{{ $category->deskripsi }}</p>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-cake"></i>
-                        </div>
-                        <h4>Wedding Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-dance"></i>
-                        </div>
-                        <h4>Party Catering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-calendar"></i>
-                        </div>
-                        <h4>Event Catering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-businessman"></i>
-                        </div>
-                        <h4>Corporate Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-running-man"></i>
-                        </div>
-                        <h4>Catering On Demand</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
 <!-- service_area-end -->
 
-<!-- video_area_start -->
-    <div class="video_area video_bg zigzag_bg_1 zigzag_bg_2 ">
-        <div class="video_area_inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="video_text">
-                            <div class="info">
-                                <div class="info_inner">
-                                        <h4>Watch Video</h4>
-                                        <p>You will love our execution</p>
-                                </div>
-                                <div class="icon_video">
-                                        <a class="popup-video" href="https://www.youtube.com/watch?v=HWnXId_Zg4k"><i class="ti-control-play"></i></a>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- breadcam_area_start -->
+    <div class="breadcam_area parallax zigzag_bg_2" style="background-image: url({{url('img/sliders/'.$sliders[0]->foto)}})">
+        <div class="breadcam_inner">
+            <div class="breadcam_text">
+                <h3>Keuntungan Untuk Anda</h3>
+                <p class="font-weight-bold">Apakah Anda tau dengan memesan gerobak di juragangerobak.com Anda akan mendapatkan banyak keuntungan.</p>
+                <ul class="text-white">
+                    <li>Terpercaya</li>
+                    <li>Tim Handal dan Kompeten</li>
+                    <li>Design Beragam</li>
+                    <li>Terpercaya</li>
+                    <li>Transaksi Mudah</li>
+                </ul>
             </div>
         </div>
     </div>
-<!-- video_area_end -->
+<!-- breadcam_area_end -->
 
 <!-- order_area_start -->
     <div class="order_area">
@@ -258,7 +211,7 @@
 <!-- order_area_end -->
 
 <!-- testmonial_area_start -->
-    <div class="testmonial_area banner-3">
+    <div class="testmonial_area parallax" style="background-image: url({{asset('/img/sliders/'.$sliders[0]->foto)}});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
