@@ -61,9 +61,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title mb-70">
-                        <h3>Brands love to take Our Services</h3>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
-                            standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                        <h3>{{ \App\Utility::find(1)->judul_brands }}</h3>
+                        {!! \App\Utility::find(1)->deskripsi_brands !!}
                     </div>
                 </div>
             </div>
