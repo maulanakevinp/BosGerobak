@@ -11,6 +11,8 @@
 |
 */
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/{any}', 'CategoriesController@show')->name('categories.show');
+
 
 Auth::routes([
     'register' => false, // Registration Routes...

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -41,12 +43,22 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($any)
     {
-        //
+        $kategori = str_replace('-', ' ', $any);
+        $category = Category::whereNamaKategori($kategori)->first();
+        
+        if (!$category) {
+            return abort(404);
+        }
+
+        $products   = Product::whereKategoriId($category->id)->paginate(9);
+        $title      = $category->nama_kategori;
+        $brands     = Brand::all();
+
+        return view('categories.show',compact('category','products','title','brands'));
     }
 
     /**

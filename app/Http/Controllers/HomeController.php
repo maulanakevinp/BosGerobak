@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
 use App\Slider;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,8 +17,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::all();
-        $categories = Category::all();
-        return view('home', compact('sliders','categories'));
+        $title          = 'Home';
+        $sliders        = Slider::all();
+        $categories     = Category::all();
+        $testimonials   = Testimonial::all();
+        $brands         = Brand::all();
+        return view('home', compact('title','sliders','categories','testimonials','brands'));
     }
 }

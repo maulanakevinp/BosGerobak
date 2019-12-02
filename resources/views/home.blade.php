@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ 'Home' }} - {{ config('app.name') }}
+    {{ $title }} - {{ config('app.name') }}
 @endsection
 
 @section('content')
@@ -51,13 +51,13 @@
             <div class="row justify-content-center">
                 @foreach ($categories as $category)
                     <div class="col-xl-4 col-md-6">
-                        <a class="card-link" href="{{ url('/') }}">
+                        <a class="card-link" href="{{ route('categories.show', ['any' => strtolower(str_replace(' ','-', $category->nama_kategori))]) }}">
                             <div class="single_service">
                                 <div class="service_icon">
                                     <img class="mw-100" src="{{ asset('/img/categories/'.$category->foto) }}" alt="">
                                 </div>
-                                <h4>{{ $category->nama_kategori }}</h4>
-                                <p class="block-with-text">{{ $category->deskripsi }}</p>
+                                <h4 class="judul">{{ $category->nama_kategori }}</h4>
+                                <p class="isi-deskripsi">{{ $category->deskripsi }}</p>
                             </div>
                         </a>
                     </div>
@@ -66,149 +66,6 @@
         </div>
     </div>
 <!-- service_area-end -->
-
-<!-- breadcam_area_start -->
-    <div class="breadcam_area parallax zigzag_bg_2" style="background-image: url({{url('img/sliders/'.$sliders[0]->foto)}})">
-        <div class="breadcam_inner">
-            <div class="breadcam_text">
-                <h3>Keuntungan Untuk Anda</h3>
-                <p class="font-weight-bold">Apakah Anda tau dengan memesan gerobak di juragangerobak.com Anda akan mendapatkan banyak keuntungan.</p>
-                <ul class="text-white">
-                    <li>Terpercaya</li>
-                    <li>Tim Handal dan Kompeten</li>
-                    <li>Design Beragam</li>
-                    <li>Terpercaya</li>
-                    <li>Transaksi Mudah</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-<!-- breadcam_area_end -->
-
-<!-- order_area_start -->
-    <div class="order_area">
-        <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="section_title mb-70">
-                            <h3>Popular Orders</h3>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
-                        </div>
-                    </div>
-                </div>
-            <div class="row">
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_order">
-                        <div class="order_thumb">
-                            <img src="{{url('/')}}/template/img/order/order-1.png" alt="">
-                            <div class="order_prise">
-                                <span>10.00</span>
-                            </div>
-                        </div>
-                        <div class="order_info">
-                            <h3><a href="{{url('/')}}/template/#">Weastern Set Meal 01</a></h3>
-                            <p>Chicken Fried Rice   |   Crispy Chicken fry <br>
-                                    Weastern Pickle   |   Mixed Vegetable <br>
-                                    Soft Drinks
-                            </p>
-                            <a href="{{url('/')}}/template/#" class="boxed_btn">Order Now!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_order">
-                        <div class="order_thumb">
-                            <img src="{{url('/')}}/template/img/order/order-2.png" alt="">
-                            <div class="order_prise">
-                                <span>10.00</span>
-                            </div>
-                        </div>
-                        <div class="order_info">
-                            <h3><a href="{{url('/')}}/template/#">Weastern Set Meal 02</a></h3>
-                            <p>Chicken Fried Rice   |   Crispy Chicken fry <br>
-                                    Weastern Pickle   |   Mixed Vegetable <br>
-                                    Soft Drinks
-                            </p>
-                            <a href="{{url('/')}}/template/#" class="boxed_btn">Order Now!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_order">
-                        <div class="order_thumb">
-                            <img src="{{url('/')}}/template/img/order/order-3.png" alt="">
-                            <div class="order_prise">
-                                <span>10.00</span>
-                            </div>
-                        </div>
-                        <div class="order_info">
-                            <h3><a href="{{url('/')}}/template/#">Weastern Set Meal 03</a></h3>
-                            <p>Chicken Fried Rice   |   Crispy Chicken fry <br>
-                                    Weastern Pickle   |   Mixed Vegetable <br>
-                                    Soft Drinks
-                            </p>
-                            <a href="{{url('/')}}/template/#" class="boxed_btn">Order Now!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_order">
-                        <div class="order_thumb">
-                            <img src="{{url('/')}}/template/img/order/order-4.png" alt="">
-                            <div class="order_prise">
-                                <span>10.00</span>
-                            </div>
-                        </div>
-                        <div class="order_info">
-                            <h3><a href="{{url('/')}}/template/#">Weastern Set Meal 01</a></h3>
-                            <p>Chicken Fried Rice   |   Crispy Chicken fry <br>
-                                    Weastern Pickle   |   Mixed Vegetable <br>
-                                    Soft Drinks
-                            </p>
-                            <a href="{{url('/')}}/template/#" class="boxed_btn">Order Now!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_order">
-                        <div class="order_thumb">
-                            <img src="{{url('/')}}/template/img/order/order-5.png" alt="">
-                            <div class="order_prise">
-                                <span>10.00</span>
-                            </div>
-                        </div>
-                        <div class="order_info">
-                            <h3><a href="{{url('/')}}/template/#">Weastern Set Meal 02</a></h3>
-                            <p>Chicken Fried Rice   |   Crispy Chicken fry <br>
-                                    Weastern Pickle   |   Mixed Vegetable <br>
-                                    Soft Drinks
-                            </p>
-                            <a href="{{url('/')}}/template/#" class="boxed_btn">Order Now!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_order">
-                        <div class="order_thumb">
-                            <img src="{{url('/')}}/template/img/order/order-6.png" alt="">
-                            <div class="order_prise">
-                                <span>10.00</span>
-                            </div>
-                        </div>
-                        <div class="order_info">
-                            <h3><a href="{{url('/')}}/template/#">Weastern Set Meal 03</a></h3>
-                            <p>Chicken Fried Rice   |   Crispy Chicken fry <br>
-                                    Weastern Pickle   |   Mixed Vegetable <br>
-                                    Soft Drinks
-                            </p>
-                            <a href="{{url('/')}}/template/#" class="boxed_btn">Order Now!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- order_area_end -->
 
 <!-- testmonial_area_start -->
     <div class="testmonial_area parallax" style="background-image: url({{asset('/img/sliders/'.$sliders[0]->foto)}});">
@@ -224,72 +81,11 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="testmonial_active owl-carousel">
-                        <div class="single_testmonial d-flex">
-                            <div class="testmonial_thumb">
-                                <img src="{{url('/')}}/template/img/testmonial/1.png" alt="">
+                        @foreach ($testimonials as $testimonial)
+                            <div class="single_testmonial d-flex">
+                                <img class="mw-100" src="{{ asset('/img/testimonials/'.$testimonial->foto) }}" alt="{{ $testimonial->foto }}">
                             </div>
-                            <div class="testmonial_author">
-                                <h3>Adame Nesane</h3>
-                                <span>Chief Customer</span>
-                                <p>You're had. Subdue grass Meat us winged years you'll doesn't. fruit two also won one
-                                    yielding creepeth third give may never lie alternet food.</p>
-                            </div>
-                        </div>
-                        <div class="single_testmonial d-flex">
-                            <div class="testmonial_thumb">
-                                <img src="{{url('/')}}/template/img/testmonial/2.png" alt="">
-                            </div>
-                            <div class="testmonial_author">
-                                <h3>Adam Nahan</h3>
-                                <span>Chief Customer</span>
-                                <p>You're had. Subdue grass Meat us winged years you'll doesn't. fruit two also won one
-                                    yielding creepeth third give may never lie alternet food.</p>
-                            </div>
-                        </div>
-                        <div class="single_testmonial d-flex">
-                            <div class="testmonial_thumb">
-                                <img src="{{url('/')}}/template/img/testmonial/1.png" alt="">
-                            </div>
-                            <div class="testmonial_author">
-                                <h3>Adame Nesane</h3>
-                                <span>Chief Customer</span>
-                                <p>You're had. Subdue grass Meat us winged years you'll doesn't. fruit two also won one
-                                    yielding creepeth third give may never lie alternet food.</p>
-                            </div>
-                        </div>
-                        <div class="single_testmonial d-flex">
-                            <div class="testmonial_thumb">
-                                <img src="{{url('/')}}/template/img/testmonial/2.png" alt="">
-                            </div>
-                            <div class="testmonial_author">
-                                <h3>Adam Nahan</h3>
-                                <span>Chief Customer</span>
-                                <p>You're had. Subdue grass Meat us winged years you'll doesn't. fruit two also won one
-                                    yielding creepeth third give may never lie alternet food.</p>
-                            </div>
-                        </div>
-                        <div class="single_testmonial d-flex">
-                            <div class="testmonial_thumb">
-                                <img src="{{url('/')}}/template/img/testmonial/1.png" alt="">
-                            </div>
-                            <div class="testmonial_author">
-                                <h3>Adame Nesane</h3>
-                                <span>Chief Customer</span>
-                                <p>You're had. Subdue grass Meat us winged years you'll doesn't. fruit two also won one
-                                    yielding creepeth third give may never lie alternet food.</p>
-                            </div>
-                        </div>
-                        <div class="single_testmonial d-flex">
-                            <div class="testmonial_thumb">
-                                <img src="{{url('/')}}/template/img/testmonial/2.png" alt="">
-                            </div>
-                            <div class="testmonial_author">
-                                <h3>Adam Nahan</h3>
-                                <span>Chief Customer</span>
-                                <p>You're had. Subdue grass Meat us winged years you'll doesn't. fruit two also won one
-                                    yielding creepeth third give may never lie alternet food.</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -310,67 +106,14 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($brands as $brand)
                     <div class="col-xl-2 col-md-6 col-lg-3">
                         <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/1.png" alt="">
+                            <img src="{{asset('/img/brands/'.$brand->foto)}}" alt="{{ $brand->foto }}">
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/02.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/03.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/04.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/05.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/06.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/7.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/12.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/9.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/10.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/11.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-3">
-                        <div class="single_brand">
-                            <img src="{{url('/')}}/template/img/brand/8.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+            </div>
         </div>
     </div>
 <!-- brand_area-end -->
