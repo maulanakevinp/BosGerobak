@@ -23,7 +23,6 @@ class Category extends Model
         'foto',
         'deskripsi',
         'keunggulan',
-        'manfaat'
     ];
 
     public function products()

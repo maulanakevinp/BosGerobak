@@ -22,4 +22,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Cateogory','kategori_id','id');
     }
+
+    public function images()
+    {
+        return $this->hasMany('App\Image','produk_id');
+    }
 }

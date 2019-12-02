@@ -6,6 +6,7 @@ use App\Brand;
 use App\Category;
 use App\Slider;
 use App\Testimonial;
+use App\Utility;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,6 +23,7 @@ class HomeController extends Controller
         $categories     = Category::all();
         $testimonials   = Testimonial::all();
         $brands         = Brand::all();
-        return view('home', compact('title','sliders','categories','testimonials','brands'));
+        $utility        = Utility::find(1);
+        return view('home', compact('title','sliders','categories','testimonials','brands','utility'));
     }
 }

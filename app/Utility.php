@@ -20,5 +20,14 @@ class Utility extends Model
      */
     protected $fillable = [
         'logo_perusahaan',
+        'judul_testimoni',
+        'deskripsi_testimoni',
+        'judul_brands',
+        'deskripsi_brands',
+        'deskripsi_kategori',
+        'link_facebook',
+        'link_instagram',
+        'link_twitter',
+        'link_youtube',
     ];
 }

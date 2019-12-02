@@ -10,7 +10,9 @@
         <div class="breadcam_inner">
             <div class="breadcam_text">
                 <h3>{{ $category->nama_kategori }}</h3>
-                <p>{!! $category->deskripsi !!}</p>
+                <div class="container">
+                    <p>{!! $category->deskripsi !!}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -19,20 +21,12 @@
 <!-- order_area_start -->
     <div class="order_area">
         <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="section_title mb-70">
-                            <h3>Popular Orders</h3>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
-                        </div>
-                    </div>
-                </div>
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-xl-4 col-md-6">
                         <div class="single_order">
                             <div class="order_thumb">
-                                <img src="{{ asset('img/products/'.$product->foto) }}" alt="">
+                                <img src="{{ asset('img/products/'.$product->images[0]->foto) }}" alt="{{ $product->images[0]->foto }}">
                                 <div class="order_prise">
                                     <span>{{ number_format($product->harga, 2, ',', '.') }}</span>
                                 </div>

@@ -44,7 +44,7 @@
                 <div class="col-xl-12">
                     <div class="section_title mb-60">
                         <h3>Kategori</h3>
-                        <p>Kami memiliki beberapa kategori gerobak yang cocok untuk anda silahkan pilih kategori grobak anda disini</p>
+                        {!! $utility->deskripsi_kategori !!}
                     </div>
                 </div>
             </div>
@@ -73,8 +73,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title white mb-60">
-                        <h3>Feedback from Customers</h3>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                        <h3>{{ $utility->judul_testimoni }}</h3>
+                        {!! $utility->deskripsi_testimoni !!}
                     </div>
                 </div>
             </div>
@@ -99,9 +99,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title mb-70">
-                        <h3>Brands love to take Our Services</h3>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
-                            standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                        <<h3>{{ $utility->judul_brands }}</h3>
+                        {!! $utility->deskripsi_brands !!}
                     </div>
                 </div>
             </div>

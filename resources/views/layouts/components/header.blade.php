@@ -9,14 +9,14 @@
                                     <ul class="mein_menu_list" id="navigation">
                                         <div class="logo-img d-none d-lg-block">
                                             <a href="{{url('/')}}">
-                                                <img src="{{url('/')}}/img/logo/logo.png" alt="">
+                                                <img src="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}" alt="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}">
                                             </a>
                                         </div>
                                         @foreach (\App\Category::all() as $category)
                                             <li><a class="{{ $category->nama_kategori == $title ? 'active' : '' }}" href="{{ route('categories.show', ['any' => strtolower(str_replace(' ','-', $category->nama_kategori))]) }}">{{ $category->nama_kategori }}</a></li>
                                         @endforeach
-                                        <li><a href="{{url('/')}}">About</a></li>
-                                        <li><a href="{{url('/')}}/template/contact.html">Contact</a></li>
+                                        <li><a href="{{url('/about')}}">About</a></li>
+                                        <li><a href="{{url('/contact')}}">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -25,8 +25,8 @@
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                         <div class="logo-img-small d-sm-block d-md-block d-lg-none">
-                            <a href="{{url('/')}}/template/index.html">
-                                <img src="{{url('/')}}/img/logo/logo.png" alt="">
+                            <a href="{{url('/')}}">
+                                <img src="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}" alt="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}">
                             </a>
                         </div>
                     </div>

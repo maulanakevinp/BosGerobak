@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
             BrandsTableSeeder::class,
             CategoriesTableSeeder::class,
             ContactsTableSeeder::class,
+            ProductsTableSeeder::class,
+            ImagesTableSeeder::class,
             SlidersTableSeeder::class,
             TestimonialsTableSeeder::class,
             UsersTableSeeder::class,
