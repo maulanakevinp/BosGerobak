@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             UtilitiesTableSeeder::class,
             CategoriesTableSeeder::class,
             ContactsTableSeeder::class,
+            SlidersTableSeeder::class,
         ]);
     }
 }

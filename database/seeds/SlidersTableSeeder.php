@@ -13,8 +13,8 @@ class SlidersTableSeeder extends Seeder
     public function run()
     {
         DB::table('sliders')->insert([
-            'judul'     => 'YAKIN OUTLET ANDA SUDAH MENARIK ?',
-            'deskripsi' => 'Kini Anda bisa mendatangkan lebih banyak pelanggan dengan Gerobak Keren dari bosgerobak.com',
+            'judul'     => 'CARI GEROBAK?',
+            'deskripsi' => 'Disini Tempatnya kini Anda bisa mendatangkan lebih banyak pelanggan dengan Gerobak Keren dari bosgerobak.com',
             'foto'      => 'slider1.png',
         ]);
     }

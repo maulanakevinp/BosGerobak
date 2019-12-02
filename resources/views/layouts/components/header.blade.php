@@ -13,7 +13,7 @@
                                         <li><a href="{{url('/')}}/template/gallery.html">gallery</a></li>
                                         <div class="logo-img d-none d-lg-block">
                                                 <a href="{{url('/')}}/template/index.html">
-                                                    <img src="{{url('/')}}/template/img/logo.png" alt="">
+                                                    <img src="{{url('/')}}/img/logo/logo.png" alt="">
                                                 </a>
                                             </div>
                                         <li><a href="{{url('/')}}/template/#">blog <i class="ti-angle-down"></i></a>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="logo-img-small d-sm-block d-md-block d-lg-none">
                                 <a href="{{url('/')}}/template/index.html">
-                                    <img src="{{url('/')}}/template/img/logo.png" alt="">
+                                    <img src="{{url('/')}}/img/logo/logo.png" alt="">
                                 </a>
                             </div>
                     </div>
