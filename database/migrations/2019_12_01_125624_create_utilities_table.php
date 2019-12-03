@@ -20,7 +20,8 @@ class CreateUtilitiesTable extends Migration
             $table->text('deskripsi_testimoni')->nullable();
             $table->text('judul_brands');
             $table->text('deskripsi_brands')->nullable();
-            $table->text('deskripsi_kategori');
+            $table->text('deskripsi_kategori')->nullable();
+            $table->text('tentang_kami');
             $table->string('link_facebook',60)->nullable();
             $table->string('link_instagram',60)->nullable();
             $table->string('link_twitter',60)->nullable();

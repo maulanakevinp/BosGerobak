@@ -1634,7 +1634,7 @@ h3 {
 
 .order_area .single_order .order_thumb .order_prise span::before {
     position: absolute;
-    content: "Rp";
+    content: "";
     left: -5px;
     top: -1px;
     color: #78b454;

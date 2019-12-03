@@ -28,12 +28,12 @@
                             <div class="order_thumb">
                                 <img src="{{ asset('img/products/'.$product->images[0]->foto) }}" alt="{{ $product->images[0]->foto }}">
                                 <div class="order_prise">
-                                    <span>{{ number_format($product->harga, 2, ',', '.') }}</span>
+                                    <span>Rp. {{ number_format($product->harga, 2, ',', '.') }}</span>
                                 </div>
                             </div>
                             <div class="order_info">
-                                <h3 class="judul"><a href="#">{{ $product->nama_produk }}</a></h3>
-                                <a href="#" class="boxed_btn">Order Now!</a>
+                                <h3 class="judul"><a href="{{ route('products.show',['product' => $product, 'nama_produk' => str_replace(' ','-', $product->nama_produk)]) }}">{{ $product->nama_produk }}</a></h3>
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone={{ whatsapp(\App\Contact::find(1)->nomor_whatsapp) }}&text=Halo,%20Saya%20ingin%20pesan%20Gerobak%20{{ $product->nama_produk }}%0A{{ route('products.show',['product' => $product, 'nama_produk' => str_replace(' ','-', $product->nama_produk)]) }}" class="boxed_btn">Pesan sekarang!</a>
                             </div>
                         </div>
                     </div>

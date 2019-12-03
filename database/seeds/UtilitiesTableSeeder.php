@@ -25,6 +25,7 @@ class UtilitiesTableSeeder extends Seeder
             'deskripsi_kategori'    => '<p>
                                             Kami memiliki beberapa kategori gerobak yang cocok untuk anda silahkan pilih kategori gerobak anda disini
                                         </p>',
+            'tentang_kami'          => 'BosGerobak adalah penyedia jasa pembuatan gerobak berbagai macam model, bahan, dan harga. Kami menyediakan 4 tipe gerobak berdasarkan bahan dan fungsinya.',
             'link_facebook'         => 'https://facebook.com',
             'link_instagram'        => 'https://instagram.com',
             'link_twitter'          => 'https://twitter.com',

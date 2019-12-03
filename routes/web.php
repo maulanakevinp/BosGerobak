@@ -12,6 +12,7 @@
 */
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/{any}', 'CategoriesController@show')->name('categories.show');
+Route::get('/produk/{product}/{nama_produk}', 'ProductsController@show')->name('products.show');
 
 
 Auth::routes([

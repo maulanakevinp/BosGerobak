@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama_kategori',30)->unique();
             $table->text('foto');
-            $table->text('deskripsi')->nullable();
+            $table->string('deskripsi',200)->nullable();
             $table->text('keunggulan')->nullable();
         });
     }

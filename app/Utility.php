@@ -25,6 +25,7 @@ class Utility extends Model
         'judul_brands',
         'deskripsi_brands',
         'deskripsi_kategori',
+        'tentang_kami',
         'link_facebook',
         'link_instagram',
         'link_twitter',

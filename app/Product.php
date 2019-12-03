@@ -20,7 +20,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo('App\Cateogory','kategori_id','id');
+        return $this->belongsTo('App\Category','kategori_id','id');
     }
 
     public function images()
