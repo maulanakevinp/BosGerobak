@@ -46,8 +46,9 @@ class ProductsController extends Controller
      */
     public function show(Product $product, $nama_produk)
     {
-        $title = $product->nama_produk;
-        return view('products.show',compact('title','product'));
+        $title = $product->category->nama_kategori;
+        $subtitle = $product->nama_produk;
+        return view('products.show',compact('subtitle','title','product'));
     }
 
     /**
