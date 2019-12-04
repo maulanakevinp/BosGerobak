@@ -99,7 +99,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title mb-70">
-                        <<h3>{{ $utility->judul_brands }}</h3>
+                        <h3>{{ $utility->judul_brands }}</h3>
                         {!! $utility->deskripsi_brands !!}
                     </div>
                 </div>
