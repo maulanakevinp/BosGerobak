@@ -31,6 +31,11 @@
 </head>
 
 <body>
+    
+    <div class="icons" style="position: fixed; bottom: 30px; right: 0; z-index: 1030">
+        <a href="https://api.whatsapp.com/send?phone={{ whatsapp(\App\Contact::find(1)->nomor_whatsapp) }}&text=Halo%20saya%20ingin%20beli%20gerobak%20anda" target="_blank" style="width: 70px;height: 70px;"><img src="{{ asset('img/logo/whatsapp.png') }}" style="width: 70px;height: 70px;padding: 15px;"></a>
+    </div>
+
     <!-- header-start -->
     @include('layouts.components.header')
     <!-- header-end -->

@@ -14,8 +14,8 @@ class ContactsTableSeeder extends Seeder
     {
         DB::table('contacts')->insert([
             'alamat'            => 'Jakarta',
-            'nomor_telepon'     => '087752465180',
-            'nomor_whatsapp'    => '087752465180',
+            'nomor_telepon'     => '082123609561',
+            'nomor_whatsapp'    => '082123609561',
             'email'             => 'admin@bosgerobak.com',
         ]);
     }
