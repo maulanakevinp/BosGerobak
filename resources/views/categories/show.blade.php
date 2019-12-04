@@ -26,7 +26,9 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="single_order">
                             <div class="order_thumb">
-                                <img src="{{ asset('img/products/'.$product->images[0]->foto) }}" alt="{{ $product->images[0]->foto }}">
+                                <a href="{{ route('products.show',['product' => $product, 'nama_produk' => str_replace(' ','-', $product->nama_produk)]) }}">
+                                    <img src="{{ asset('img/products/'.$product->images[0]->foto) }}" alt="{{ $product->images[0]->foto }}">
+                                </a>
                                 <div class="order_prise">
                                     <span>Rp. {{ number_format($product->harga, 2, ',', '.') }}</span>
                                 </div>

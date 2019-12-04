@@ -14,11 +14,19 @@ class ImagesTableSeeder extends Seeder
     {
         DB::table('images')->insert([
             'produk_id' => '1',
-            'foto'      => '1.png',
+            'foto'      => '1.jpg',
+        ]);
+        DB::table('images')->insert([
+            'produk_id' => '1',
+            'foto'      => '1-1.jpg',
         ]);
         DB::table('images')->insert([
             'produk_id' => '2',
-            'foto'      => '2.png',
+            'foto'      => '2.jpg',
+        ]);
+        DB::table('images')->insert([
+            'produk_id' => '2',
+            'foto'      => '2-1.jpg',
         ]);
         DB::table('images')->insert([
             'produk_id' => '3',
