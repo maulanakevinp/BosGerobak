@@ -15,6 +15,23 @@
                                     @foreach (\App\Category::all() as $category)
                                         <li><a class="{{ $category->nama_kategori == $title ? 'active' : '' }}" href="{{ route('categories.show', ['any' => strtolower(str_replace(' ','-', $category->nama_kategori))]) }}">{{ $category->nama_kategori }}</a></li>
                                     @endforeach
+                                    @if (auth()->user())
+                                        <li><a class="{{ $title == auth()->user() ? 'active' : '' }}" href="#">{{ auth()->user()->name }} <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="{{ route('users.edit') }}">Ganti Password</a></li>
+                                                <li>
+                                                    <a href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                        <span>{{ __('Logout') }}</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    @endif
                                 </ul>
                             </nav>
                         </div>
@@ -24,7 +41,7 @@
                     </div>
                     <div class="logo-img-small d-sm-block d-md-block d-lg-none">
                         <a href="{{url('/')}}">
-                            <img src="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}" alt="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}">
+                            <img class="p-1" src="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}" alt="{{ asset('/img/logo/'.\App\Utility::find(1)->logo_perusahaan) }}">
                         </a>
                     </div>
                 </div>

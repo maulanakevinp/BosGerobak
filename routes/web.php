@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/{any}', 'CategoriesController@show')->name('categories.show');
-Route::get('/produk/{product}/{nama_produk}', 'ProductsController@show')->name('products.show');
 
+//Auth
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Auth::routes([
     'register' => false, // Registration Routes...
@@ -24,3 +25,9 @@ Auth::routes([
     'password.update' => false, // Email Verification Routes...
     'password.reset' => false, // Email Verification Routes...
 ]);
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/ganti-password', 'UsersController@edit')->name('users.edit');
+Route::patch('/update-password/{user}', 'UsersController@update')->name('users.update');
+Route::get('/{any}', 'CategoriesController@show')->name('categories.show');
+Route::get('/produk/{product}/{nama_produk}', 'ProductsController@show')->name('products.show');

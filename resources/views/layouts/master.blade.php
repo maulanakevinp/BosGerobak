@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{url('/')}}/template/css/slicknav.css">
     <link rel="stylesheet" href="{{url('/')}}/template/css/style.css">
     <link rel="stylesheet" href="{{url('/')}}/template/css/responsive.css">
+    
     <link rel="stylesheet" href="{{url('/')}}/css/mystyle.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
