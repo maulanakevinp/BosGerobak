@@ -19,6 +19,11 @@
                                         <li><a class="{{ $title == auth()->user() ? 'active' : '' }}" href="#">{{ auth()->user()->name }} <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="{{ route('users.edit') }}">Ganti Password</a></li>
+                                                <li><a href="{{ route('sliders.index') }}">Slide Show</a></li>
+                                                <li><a href="{{ route('kategori.index') }}">Kategori</a></li>
+                                                <li><a href="{{ route('testimoni.index') }}">Testimoni</a></li>
+                                                <li><a href="{{ route('brands.index') }}">Brand</a></li>
+                                                <li><a href="{{ route('contacts.edit') }}">Ubah Kontak</a></li>
                                                 <li>
                                                     <a href="{{ route('logout') }}"
                                                         onclick="event.preventDefault();

@@ -22,12 +22,12 @@
                 @if ($i == 0)
                     <?php continue; ?>
                 @endif
-                <div class="single_slider" style="background-image: url({{url('/')}}/img/sliders/{{ $slider[$i]->foto }})">
-                    @if ($slider[$i]->judul && $slider[$i]->deskripsi)
+                <div class="single_slider" style="background-image: url({{url('/')}}/img/sliders/{{ $sliders[$i]->foto }})">
+                    @if ($sliders[$i]->judul && $sliders[$i]->deskripsi)
                         <div class="single_slider-iner">
                             <div class="slider_contant text-center">
-                                <h3>{{ $slider[$i]->judul }}</h3>
-                                    <p>{{ $slider[$i]->deskripsi }}</p>
+                                <h3>{{ $sliders[$i]->judul }}</h3>
+                                    <p>{{ $sliders[$i]->deskripsi }}</p>
                             </div>
                         </div>
                     @endif

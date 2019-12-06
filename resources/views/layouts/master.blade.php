@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="{{url('/')}}/template/css/animate.css">
     <link rel="stylesheet" href="{{url('/')}}/template/css/slicknav.css">
     <link rel="stylesheet" href="{{url('/')}}/template/css/style.css">
-    <link rel="stylesheet" href="{{url('/')}}/template/css/responsive.css">
     
     <link rel="stylesheet" href="{{url('/')}}/css/mystyle.css">
 
@@ -75,6 +74,7 @@
     <script src="{{url('/')}}/template/js/mail-script.js"></script>
 
     <script src="{{url('/')}}/template/js/main.js"></script>
+    <script src="{{url('/')}}/js/myscript.js"></script>
 	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     @include('sweet::alert')

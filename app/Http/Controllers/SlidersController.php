@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use UxWeb\SweetAlert\SweetAlert;
 
 class SlidersController extends Controller
 {
@@ -14,17 +16,11 @@ class SlidersController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $title = auth()->user()->name;
+        $subtitle = 'Slide Show';
+        $sliders = Slider::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('sliders.index',compact('title','subtitle','sliders'));
     }
 
     /**
@@ -35,29 +31,16 @@ class SlidersController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $slider = $request->validate([
+            'foto'      => ['required','image','mimes:jpeg,png','max:2048'],
+            'judul'     => ['nullable','string','max:64'],
+            'deskripsi' => ['nullable','string'],
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Slider $slider)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Slider $slider)
-    {
-        //
+        $slider['foto'] = $this->setImageUpload($request->foto, 'img/sliders');
+        Slider::create($slider);
+        SweetAlert::success('Slide show berhasil ditambahkan','Berhasil');
+        return back();
     }
 
     /**
@@ -69,7 +52,21 @@ class SlidersController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        //
+        $request->validate([
+            'foto'      => ['nullable','image','mimes:jpeg,png','max:2048'],
+            'judul'     => ['nullable','string','max:64'],
+            'deskripsi' => ['nullable','string'],
+        ]);
+
+        if ($request->foto) {
+            $slider->foto = $this->setImageUpload($request->foto, 'img/sliders', $slider->foto);
+        }
+
+        $slider->judul      = $request->judul;
+        $slider->deskripsi  = $request->deskripsi;
+        $slider->save();
+        SweetAlert::success('Slide show berhasil diperbarui','Berhasil');
+        return back();
     }
 
     /**
@@ -80,6 +77,14 @@ class SlidersController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        File::delete(public_path('img/sliders/'.$slider->foto));
+        Slider::destroy($slider->id);
+        SweetAlert::success('Slide show berhasil dihapus','Berhasil');
+        return back();
+    }
+
+    public function get(Request $request)
+    {
+        echo json_encode(Slider::find($request->id));
     }
 }

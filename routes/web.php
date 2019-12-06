@@ -27,7 +27,21 @@ Auth::routes([
 ]);
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/ganti-password', 'UsersController@edit')->name('users.edit');
-Route::patch('/update-password/{user}', 'UsersController@update')->name('users.update');
+
+Route::group(['middleware' => ['auth','web']], function(){
+    Route::post('/get-slider', 'SlidersController@get');
+
+    Route::get('/ganti-password', 'UsersController@edit')->name('users.edit');
+    Route::patch('/update-password/{user}', 'UsersController@update')->name('users.update');
+
+    Route::get('/ubah-kontak', 'ContactsController@edit')->name('contacts.edit');
+    Route::patch('/update-kontak/{contact}', 'contactsController@update')->name('contacts.update');
+
+    Route::resource('/sliders', 'SlidersController');
+    Route::resource('/kategori', 'CategoriesController');
+    Route::resource('/testimoni', 'TestimonialsController');
+    Route::resource('/brands', 'BrandsController');
+});
+
 Route::get('/{any}', 'CategoriesController@show')->name('categories.show');
 Route::get('/produk/{product}/{nama_produk}', 'ProductsController@show')->name('products.show');
