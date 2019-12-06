@@ -30,17 +30,23 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth','web']], function(){
     Route::post('/get-slider', 'SlidersController@get');
+    Route::post('/get-testimoni', 'TestimonialsController@get');
+    Route::post('/get-brands', 'BrandsController@get');
+    Route::post('/get-kategori', 'CategoriesController@get');
 
     Route::get('/ganti-password', 'UsersController@edit')->name('users.edit');
     Route::patch('/update-password/{user}', 'UsersController@update')->name('users.update');
 
     Route::get('/ubah-kontak', 'ContactsController@edit')->name('contacts.edit');
-    Route::patch('/update-kontak/{contact}', 'contactsController@update')->name('contacts.update');
+    Route::patch('/update-kontak/{contact}', 'ContactsController@update')->name('contacts.update');
 
-    Route::resource('/sliders', 'SlidersController');
-    Route::resource('/kategori', 'CategoriesController');
-    Route::resource('/testimoni', 'TestimonialsController');
-    Route::resource('/brands', 'BrandsController');
+    Route::get('/ubah-utilitas', 'UtilitiesController@edit')->name('utilitas.edit');
+    Route::patch('/utilitas/{utility}', 'UtilitiesController@update')->name('utilitas.update');
+
+    Route::resource('/sliders', 'SlidersController')->except(['create','show','edit']);
+    Route::resource('/kategori', 'CategoriesController')->except(['create','show','edit']);
+    Route::resource('/testimoni', 'TestimonialsController')->except(['create','show','edit']);
+    Route::resource('/brands', 'BrandsController')->except(['create','show','edit']);
 });
 
 Route::get('/{any}', 'CategoriesController@show')->name('categories.show');

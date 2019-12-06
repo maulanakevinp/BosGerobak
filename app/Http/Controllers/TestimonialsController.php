@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use UxWeb\SweetAlert\SweetAlert;
 
 class TestimonialsController extends Controller
 {
@@ -14,17 +16,11 @@ class TestimonialsController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $title = auth()->user()->name;
+        $subtitle = 'Testimoni';
+        $testimonials = Testimonial::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('testimonials.index',compact('title','subtitle','testimonials'));
     }
 
     /**
@@ -35,29 +31,14 @@ class TestimonialsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $testimoni = $request->validate([
+            'foto'      => ['required','image','mimes:jpeg,png','max:2048'],
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Testimonial  $testimonial
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Testimonial $testimonial)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Testimonial  $testimonial
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Testimonial $testimonial)
-    {
-        //
+        $testimoni['foto'] = $this->setImageUpload($request->foto, 'img/testimonials');
+        Testimonial::create($testimoni);
+        SweetAlert::success('Testimoni berhasil ditambahkan','Berhasil');
+        return back();
     }
 
     /**
@@ -67,9 +48,16 @@ class TestimonialsController extends Controller
      * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request, Testimonial $testimoni)
     {
-        //
+        $testimonial = $request->validate([
+            'foto'      => ['required','image','mimes:jpeg,png','max:2048'],
+        ]);
+
+        $testimonial['foto'] = $this->setImageUpload($request->foto, 'img/testimonials',$testimoni->foto);
+        $testimoni->update($testimonial);
+        SweetAlert::success('Testimoni berhasil diperbarui','Berhasil');
+        return back();
     }
 
     /**
@@ -78,8 +66,16 @@ class TestimonialsController extends Controller
      * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Testimonial $testimonial)
+    public function destroy(Testimonial $testimoni)
     {
-        //
+        File::delete(public_path('img/testimonials/'.$testimoni->foto));
+        Testimonial::destroy($testimoni->id);
+        SweetAlert::success('Testimoni berhasil dihapus','Berhasil');
+        return back();
+    }
+    
+    public function get(Request $request)
+    {
+        echo json_encode(Testimonial::find($request->id));
     }
 }

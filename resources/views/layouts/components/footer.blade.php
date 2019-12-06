@@ -69,17 +69,17 @@
                 <div class="col-xl-5 col-md-12 col-lg-4">
                     <div class="social_links">
                         <ul>
-                            @if (\App\Utility::find(1)->facebook)
-                                <li><a href="{{ \App\Utility::find(1)->facebook }}"> <i class="fa fa-facebook"></i> </a></li>
+                            @if (\App\Utility::find(1)->link_facebook)
+                                <li><a href="{{ \App\Utility::find(1)->link_facebook }}"> <i class="fa fa-facebook"></i> </a></li>
                             @endif
-                            @if (\App\Utility::find(1)->twitter)
-                                <li><a href="{{ \App\Utility::find(1)->twitter }}"> <i class="fa fa-twitter"></i> </a></li>
+                            @if (\App\Utility::find(1)->link_twitter)
+                                <li><a href="{{ \App\Utility::find(1)->link_twitter }}"> <i class="fa fa-twitter"></i> </a></li>
                             @endif
-                            @if (\App\Utility::find(1)->instagram)
-                                <li><a href="{{ \App\Utility::find(1)->instagram }}"> <i class="fa fa-instagram"></i> </a></li>
+                            @if (\App\Utility::find(1)->link_instagram)
+                                <li><a href="{{ \App\Utility::find(1)->link_instagram }}"> <i class="fa fa-instagram"></i> </a></li>
                             @endif
-                            @if (\App\Utility::find(1)->youtube)
-                                <li><a href="{{ \App\Utility::find(1)->youtube }}"> <i class="fa fa-youtube"></i> </a></li>
+                            @if (\App\Utility::find(1)->link_youtube)
+                                <li><a href="{{ \App\Utility::find(1)->link_youtube }}"> <i class="fa fa-youtube"></i> </a></li>
                             @endif
                         </ul>
                     </div>

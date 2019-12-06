@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use UxWeb\SweetAlert\SweetAlert;
 
 class BrandsController extends Controller
 {
@@ -14,17 +16,11 @@ class BrandsController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $title = auth()->user()->name;
+        $subtitle = 'Brands';
+        $brands = Brand::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('brands.index',compact('title','subtitle','brands'));
     }
 
     /**
@@ -35,29 +31,14 @@ class BrandsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $brands = $request->validate([
+            'foto'      => ['required','image','mimes:jpeg,png','max:2048'],
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Brand  $brand
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Brand $brand)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Brand  $brand
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Brand $brand)
-    {
-        //
+        $brands['foto'] = $this->setImageUpload($request->foto, 'img/brands');
+        Brand::create($brands);
+        SweetAlert::success('Brand berhasil ditambahkan','Berhasil');
+        return back();
     }
 
     /**
@@ -69,7 +50,14 @@ class BrandsController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+        $brands = $request->validate([
+            'foto'      => ['required','image','mimes:jpeg,png','max:2048'],
+        ]);
+
+        $brands['foto'] = $this->setImageUpload($request->foto, 'img/brands',$brand->foto);
+        $brand->update($brands);
+        SweetAlert::success('Brand berhasil diperbarui','Berhasil');
+        return back();
     }
 
     /**
@@ -80,6 +68,14 @@ class BrandsController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        File::delete(public_path('img/brands/'.$brand->foto));
+        Brand::destroy($brand->id);
+        SweetAlert::success('Brand berhasil dihapus','Berhasil');
+        return back();
+    }
+    
+    public function get(Request $request)
+    {
+        echo json_encode(Brand::find($request->id));
     }
 }

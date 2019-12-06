@@ -23,11 +23,13 @@
     <link rel="stylesheet" href="{{url('/')}}/template/css/animate.css">
     <link rel="stylesheet" href="{{url('/')}}/template/css/slicknav.css">
     <link rel="stylesheet" href="{{url('/')}}/template/css/style.css">
-    
     <link rel="stylesheet" href="{{url('/')}}/css/mystyle.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 	@yield('styles')
+    {{-- <script src="https://kit.fontawesome.com/5731b34870.js" crossorigin="anonymous"></script> --}}
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+
 </head>
 
 <body>

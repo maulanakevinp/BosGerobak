@@ -52,19 +52,17 @@ class SlidersController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        $request->validate([
+        $sliders = $request->validate([
             'foto'      => ['nullable','image','mimes:jpeg,png','max:2048'],
             'judul'     => ['nullable','string','max:64'],
             'deskripsi' => ['nullable','string'],
         ]);
 
         if ($request->foto) {
-            $slider->foto = $this->setImageUpload($request->foto, 'img/sliders', $slider->foto);
+            $sliders['foto'] = $this->setImageUpload($request->foto, 'img/sliders', $slider->foto);
         }
 
-        $slider->judul      = $request->judul;
-        $slider->deskripsi  = $request->deskripsi;
-        $slider->save();
+        $slider->update($sliders);
         SweetAlert::success('Slide show berhasil diperbarui','Berhasil');
         return back();
     }

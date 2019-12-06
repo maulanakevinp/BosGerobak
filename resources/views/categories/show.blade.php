@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($brands as $brand)
+                @foreach ( \App\Brand::all() as $brand)
                     <div class="col-xl-2 col-md-6 col-lg-3">
                         <div class="single_brand">
                             <img src="{{asset('/img/brands/'.$brand->foto)}}" alt="{{ $brand->foto }}">

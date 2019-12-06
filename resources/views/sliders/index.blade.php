@@ -38,7 +38,7 @@
                                 @if ($slider->id != 1)
                                     <form class="d-inline-block" action="{{ route('sliders.destroy', $slider) }}" method="POST">
                                         @csrf @method('delete')
-                                        <button type="submit" class="genric-btn danger">Hapus</button>
+                                        <button type="submit" class="genric-btn danger" onclick="return confirm('Apakah anda yakin ingin menghapus Slide ini??')">Hapus</button>
                                     </form>
                                 @endif
                             </div>
@@ -115,6 +115,9 @@
             $('#judulModal').html('Tambah Slide Show');
             $('#formSlider').attr('action', "{{ route('sliders.store') }}");
             $('#method').val('post');
+            $('#image').attr('src', "");
+            $('#judul').val("");
+            $('#deskripsi').val("");
         }
 
         function edit(id) {
