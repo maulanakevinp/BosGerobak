@@ -50,14 +50,14 @@
             </div>
             <div class="row justify-content-center">
                 @foreach ($categories as $category)
-                    <div class="col-xl-4 col-md-6">
+                    <div class="col-xl-6">
                         <a class="card-link" href="{{ route('categories.show', ['any' => strtolower(str_replace(' ','-', $category->nama_kategori))]) }}">
                             <div class="single_service">
                                 <div class="service_icon">
                                     <img class="mw-100" src="{{ asset('/img/categories/'.$category->foto) }}" alt="">
                                 </div>
                                 <h4 class="judul">{{ $category->nama_kategori }}</h4>
-                                <p class="isi-deskripsi">{{ $category->deskripsi }}</p>
+                                <div class="isi-deskripsi">{!! $category->deskripsi !!}</div>
                             </div>
                         </a>
                     </div>

@@ -34,9 +34,9 @@ class CategoriesController extends Controller
     {
         $categories = $request->validate([
             'foto'          => ['required','image','mimes:jpeg,png','max:2048'],
-            'nama_kategori' => ['nullable','string','max:30'],
-            'deskripsi'     => ['nullable','string','max:200'],
-            'keunggulan'    => ['nullable','string'],
+            'nama_kategori' => ['required','string','max:30'],
+            'deskripsi'     => ['required','string','max:200'],
+            'keunggulan'    => ['required','string'],
         ]);
 
         $categories['foto'] = $this->setImageUpload($request->foto, 'img/categories');
@@ -66,6 +66,19 @@ class CategoriesController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Category  $kategori
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Category $kategori)
+    {
+        $title = auth()->user()->name;
+        $subtitle = 'Ubah Kategori';
+        return view('categories.edit', compact('kategori','title','subtitle'));
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -75,10 +88,10 @@ class CategoriesController extends Controller
     public function update(Request $request, Category $kategori)
     {
         $categories = $request->validate([
-            'foto'          => ['required','image','mimes:jpeg,png','max:2048'],
-            'nama_kategori' => ['nullable','string','max:30'],
-            'deskripsi'     => ['nullable','string','max:200'],
-            'keunggulan'    => ['nullable','string'],
+            'foto'          => ['nullable','image','mimes:jpeg,png','max:2048'],
+            'nama_kategori' => ['required','string','max:30'],
+            'deskripsi'     => ['required','string','max:200'],
+            'keunggulan'    => ['required','string'],
         ]);
 
         if($request->foto){

@@ -12,6 +12,13 @@
                 <h3>{{ $product->nama_produk }}</h3>
                 <div class="container">
                     <h4 class="h3 text-white">Rp. {{ number_format($product->harga, 2, ',', '.') }}</h4>
+                    @if (auth()->user())
+                        <a href="{{ route('products.edit',$product) }}" class="genric-btn success mt-5">Ubah Produk</a>
+                        <form class="d-inline-block" action="{{ route('products.destroy',$product) }}" method="post">
+                            @csrf @method('delete')
+                            <button type="submit" class="genric-btn danger" onclick="return confirm('apakah anda yakin ingin menghapus produk ini???')">Hapus Produk</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

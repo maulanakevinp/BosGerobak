@@ -10,8 +10,11 @@
         <div class="breadcam_inner">
             <div class="breadcam_text">
                 <h3>{{ $category->nama_kategori }}</h3>
-                <div class="container">
-                    <p>{!! $category->deskripsi !!}</p>
+                <div class="container text-white">
+                    {!! $category->deskripsi !!}
+                    @if (auth()->user())
+                        <a href="{{ route('products.create',$category) }}" class="genric-btn primary mt-5">Tambah Produk</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -51,7 +54,9 @@
         <div class="breadcam_inner">
             <div class="breadcam_text">
                 <h3>Keunggulan</h3>
-                <p>{!! $category->keunggulan !!}</p>
+                <div class="container text-white">
+                    {!! $category->keunggulan !!}
+                </div>
             </div>
         </div>
     </div>

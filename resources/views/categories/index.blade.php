@@ -10,13 +10,13 @@
         <div class="breadcam_inner">
             <div class="breadcam_text">
                 <h3>{{ $subtitle }}</h3>
-                <button onclick="tambah()" class="genric-btn primary">Tambah Slider</button>
+                <button onclick="tambah()" class="genric-btn primary">Tambah Kategori</button>
             </div>
         </div>
     </div>
 <!-- breadcam_area_end -->
 
-<!-- slider_start -->
+<!-- kategori_start -->
     <div class="service_area">
         <div class="container">
             
@@ -32,9 +32,9 @@
                                 <img class="mw-100" src="{{ asset('/img/categories/'.$category->foto) }}" alt="">
                             </div>
                             <h4 class="judul">{{ $category->nama_kategori }}</h4>
-                            <p class="isi-deskripsi">{{ $category->deskripsi }}</p>
+                            <div class="isi-deskripsi">{!! $category->deskripsi !!}</div>
                             <div class="d-inline-block">
-                                <button onclick="edit({{$category->id}})" class="genric-btn success-border mt-3" data-toggle="modal">Ubah</button>
+                                <a href="{{ route('kategori.edit',$category) }}" class="genric-btn success-border mt-3">Ubah</a>
                                 @if ($category->id != 1)
                                     <form class="d-inline-block" action="{{ route('kategori.destroy', $category) }}" method="POST">
                                         @csrf @method('delete')
@@ -48,17 +48,16 @@
             </div>
         </div>
     </div>
-<!-- slider_end -->
+<!-- kategori_end -->
 
 <!-- modal_start -->
     <div id="modalKategori" class="mymodal">
         <div class="mymodal-content">
             <div class="mymodal-header">
-                <h2 id="judulModal" class="text-white">Tambah Kategori</h2>
+                <h2 id="judulModal" class="text-white pt-2">Tambah Kategori</h2>
             </div>
-            <form id="formModal" action="" method="post" enctype="multipart/form-data">
+            <form id="formModal" action="{{ route('kategori.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <input id="method" type="hidden" name="_method" value="post">
                 <div class="mymodal-body">
                     <div class="form-group">
                         <div class="text-center">
@@ -100,6 +99,7 @@
     <script>
 
         CKEDITOR.replace( 'keunggulan' );
+        CKEDITOR.replace( 'deskripsi' );
         // Get the modal
         var modal = document.getElementById("modalKategori");
 
@@ -116,35 +116,6 @@
         
         function tambah() {
             modal.style.display = "block";
-            $('#judulModal').html('Tambah Slide Show');
-            $('#formModal').attr('action', "{{ route('kategori.store') }}");
-            $('#image').attr('src', "");
-            $('#nama_kategori').val("");
-            $('#deskripsi').val("");
-            $('#keunggulan').val("");
-            $('#method').val('post');
-        }
-
-        function edit(id) {
-            modal.style.display = "block";
-            $('#judulModal').html('Ubah Slide Show');
-            $('#formModal').attr('action', "{{ url('/kategori') }}" + "/" + id);
-            $('#method').val('patch');
-            $.ajax({
-                url: "{{ url('/get-kategori') }}",
-                method: 'post',
-                dataType: 'json',
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    id: id
-                },
-                success: function (data) {
-                    $('#image').attr('src', "{{ url('/img/categories') }}" + "/" + data.foto);
-                    $('#nama_kategori').val(data.nama_kategori);
-                    $('#deskripsi').val(data.deskripsi);
-                    $('#keunggulan').append(data.keunggulan);
-                }
-            });
         }
 
         $(".custom-file-input").on("change", function () {

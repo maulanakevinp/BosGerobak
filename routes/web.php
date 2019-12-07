@@ -43,10 +43,17 @@ Route::group(['middleware' => ['auth','web']], function(){
     Route::get('/ubah-utilitas', 'UtilitiesController@edit')->name('utilitas.edit');
     Route::patch('/utilitas/{utility}', 'UtilitiesController@update')->name('utilitas.update');
 
+    Route::get('/tambah-produk/{kategori}', 'ProductsController@create')->name('products.create');
+    Route::post('/produk', 'ProductsController@store')->name('products.store');
+    Route::get('/ubah-produk/{produk}', 'ProductsController@edit')->name('products.edit');
+    Route::patch('/produk/{produk}', 'ProductsController@update')->name('products.update');
+    Route::delete('/produk/{produk}', 'ProductsController@destroy')->name('products.destroy');
+
     Route::resource('/sliders', 'SlidersController')->except(['create','show','edit']);
-    Route::resource('/kategori', 'CategoriesController')->except(['create','show','edit']);
+    Route::resource('/kategori', 'CategoriesController')->except(['create','show']);
     Route::resource('/testimoni', 'TestimonialsController')->except(['create','show','edit']);
     Route::resource('/brands', 'BrandsController')->except(['create','show','edit']);
+    Route::resource('/images', 'ImagesController')->except(['index','create','show','edit']);
 });
 
 Route::get('/{any}', 'CategoriesController@show')->name('categories.show');
