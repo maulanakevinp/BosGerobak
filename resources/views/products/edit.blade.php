@@ -91,7 +91,10 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="spesifikasi" class="col-md-2 col-form-label text-md-right">{{ __('Spesifikasi') }}</label>
+                            <div class="col-md-2  text-md-right">
+                                <label for="spesifikasi" class="col-form-label">{{ __('Spesifikasi') }}</label>
+                                <br><small class="text-info">(Tidak Wajib)</small>
+                            </div>
 
                             <div class="col-md-10">
                                 <textarea id="spesifikasi" class="form-control @error('spesifikasi') is-invalid @enderror" name="spesifikasi" placeholder="Masukkan deskripsi kategori">{{ old('spesifikasi', $produk->spesifikasi) }}</textarea>

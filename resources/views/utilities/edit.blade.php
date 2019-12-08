@@ -44,7 +44,7 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="tentang_kami" class="col-md-2 col-form-label text-md-right">{{ __('Tentang Kami') }}</label>
+                            <label for="tentang_kami" class="col-md-2 col-form-label text-md-right">{{ __('Tentang Kami') }} <span class="text-danger h5">*</span></label>
 
                             <div class="col-md-10">
                                 <textarea id="tentang_kami" class="form-control @error('tentang_kami') is-invalid @enderror" name="tentang_kami" placeholder="Masukkan tentang kami">{{ old('tentang_kami', $utility->tentang_kami) }}</textarea>
@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="judul_testimoni" class="col-md-2 col-form-label text-md-right">{{ __('Judul Testimoni') }}</label>
+                            <label for="judul_testimoni" class="col-md-2 col-form-label text-md-right">{{ __('Judul Testimoni') }} <span class="text-danger h5">*</span></label>
 
                             <div class="col-md-10">
                                 <input id="judul_testimoni" type="text" class="form-control @error('judul_testimoni') is-invalid @enderror" name="judul_testimoni" value="{{ old('judul_testimoni', $utility->judul_testimoni) }}" placeholder="Masukkan judul testimoni" autocomplete="off">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="judul_brands" class="col-md-2 col-form-label text-md-right">{{ __('Judul Brands') }}</label>
+                            <label for="judul_brands" class="col-md-2 col-form-label text-md-right">{{ __('Judul Brands') }} <span class="text-danger h5">*</span></label>
 
                             <div class="col-md-10">
                                 <input id="judul_brands" type="text" class="form-control @error('judul_brands') is-invalid @enderror" name="judul_brands" value="{{ old('judul_brands', $utility->judul_brands) }}" placeholder="Masukkan judul brands" autocomplete="off">

@@ -70,12 +70,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Judul</label>
+                        <label>Judul</label> <small class="text-info">(Tidak Wajib)</small>
                         <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" id="judul" placeholder="Masukkan Judul">
                         @error('judul') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
                     <div class="form-group">
-                        <label>Deskripsi</label>
+                        <label>Deskripsi</label> <small class="text-info">(Tidak Wajib)</small>
                         <textarea name="deskripsi" id="deskripsi" rows="3" class="form-control @error('deskripsi') is-invalid @enderror"></textarea>
                     </div>
                 </div>
