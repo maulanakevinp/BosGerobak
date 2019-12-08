@@ -1,0 +1,26 @@
+Slide Show
+adalah gambar yang ada di halaman awal
+posisi paling atas
+
+1. cara menambah kan slide show
+arahkan mouse ke menu Administrator
+- klik Slide Show
+- klik tambah
+- klik pilih foto, pilih salah satu foto
+- klik oke
+- masukkan judul bila diperlukan
+- masukkan deskripsi bila diperlukan
+- klik simpan
+
+2. cara megubah slide show
+- pilih salah satu slide show
+- klik ubah
+- pilih foto jika diperlukan
+- ubah judul bila diperlukan
+- ubah deskripsi bila diperlukan
+klik simpan
+
+3. cara menghapus slide show
+- pilih salah satu slide show
+- klik hapus
+- klik oke

@@ -66,6 +66,7 @@
                             <input type="file" class="custom-file-input @error('foto') is-invalid @enderror" id="foto" name="foto">
                             <label class="custom-file-label" for="foto">Pilih Foto @error('foto') Harus diisi @enderror</label>
                         </div>
+                        <small>catatan : maksimal ukuran foto yaitu 150x150 pixel</small>
                     </div>
                 </div>
                 <div class="mymodal-footer p-2">

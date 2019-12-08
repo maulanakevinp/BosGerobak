@@ -1,0 +1,21 @@
+Testimoni
+
+1. cara menambahkan testimoni
+arahkan mouse ke menu Administrator
+- klik testimoni
+- klik tambah
+- klik pilih foto, pilih salah satu foto
+- klik oke
+- klik simpan
+
+2. cara megubah testimoni
+- pilih salah satu testimoni
+- klik ubah
+- klik pilih foto, pilih salah satu foto
+- klik oke
+- klik simpan
+
+3. cara menghapus testimoni
+- pilih salah satu testimoni
+- klik hapus
+- klik oke

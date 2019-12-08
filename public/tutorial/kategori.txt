@@ -1,0 +1,26 @@
+Kategori
+
+1. cara menambahkan kategori
+arahkan mouse ke menu Administrator
+- klik Kategori
+- klik tambah
+- klik pilih foto, pilih salah satu foto
+- klik oke
+- masukkan nama kategori
+- masukkan deskripsi
+- masukkan keunggulan kategori
+- klik simpan
+
+2. cara megubah kategori
+- pilih salah satu kategori
+- klik ubah
+- pilih foto jika diperlukan
+- ubah nama kategori bila diperlukan
+- ubah deskripsi bila diperlukan
+- ubah keunggulan kategori bila diperlukan
+- klik simpan
+
+3. cara menghapus kategori
+- pilih salah satu kategori
+- klik hapus
+- klik oke

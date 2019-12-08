@@ -1,0 +1,53 @@
+UBAH UTILITAS
+fungsinya untuk mengubah tampilan awal
+
+Cara :
+arahkan mouse pada menu Administrator 
+kemudian klik Ubah Utilitas
+
+- untuk mengganti logo
+  klik pilih logo perusahaan
+
+- field tentang kami
+  berfungsi untuk mengubah isi 
+  tentang kami yang ada di footer
+
+- field deskripsi kategori
+  berfungsi untuk mengubah tulisan 
+  dibawah judul kategori dihalaman awal
+
+- field judul testimoni
+  berfungsi untuk mengubah judul
+  testimoni dihalaman awal  
+
+- field deskripsi testimoni
+  berfungsi untuk mengubah tulisan 
+  dibawah judul testimoni dihalaman awal
+
+- field judul brands
+  berfungsi untuk mengubah judul
+  Brands dihalaman awal  
+
+- field deskripsi brands
+  berfungsi untuk mengubah tulisan 
+  dibawah judul brands dihalaman awal
+
+- field facebook berisikan url facebook
+  perusahaan (jika memiliki akun facebook
+  harap diisi jika tidak harap dikosongi)
+
+- field instagram berisikan url instagram
+  perusahaan (jika memiliki akun instagram
+  harap diisi jika tidak harap dikosongi)
+
+- field twitter berisikan url twitter
+  perusahaan (jika memiliki akun twitter
+  harap diisi jika tidak harap dikosongi)
+
+- field youtube berisikan url youtube
+  perusahaan (jika memiliki akun youtube
+  harap diisi jika tidak harap dikosongi)
+
+kemudian klik simpan
+
+catatan : tanda * warna merah wajib diisi
