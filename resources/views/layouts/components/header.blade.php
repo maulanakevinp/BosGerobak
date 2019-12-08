@@ -25,6 +25,7 @@
                                                 <li><a href="{{ route('kategori.index') }}">Kategori</a></li>
                                                 <li><a href="{{ route('testimoni.index') }}">Testimoni</a></li>
                                                 <li><a href="{{ route('brands.index') }}">Brand</a></li>
+                                                <li><a href="https://www.bosgerobak.com:2096">Email</a></li>
                                                 <li>
                                                     <a href="{{ route('logout') }}"
                                                         onclick="event.preventDefault();
