@@ -43,7 +43,7 @@
             </div>
             <div class="row grid">
                 @foreach ($product->images as $image)
-                    <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="col-lg-4 col-md-6 grid-item">
                         <div class="single_gallery mini_height" style="background-image: url({{ asset('/img/products/'.$image->foto) }})">
                             <a href="{{ asset('/img/products/'.$image->foto) }}" class="popup-image"></a>
                         </div>
